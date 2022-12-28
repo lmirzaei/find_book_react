@@ -11,11 +11,20 @@ function Popular() {
     }, []);
 
     const getPopular = async () => {
-        const api = await fetch('https://www.googleapis.com/books/v1/volumes?q=quilting');
-        const data = await api.json();
-        console.log(data);
+        const check = localStorage.getItem('popular'); // check to see if popular is already in the local storage
+        if (check) {
+            setPopular(JSON.parse(check)); // Local storage saves data only in String format, not array or list format.
+        }
+        else {
 
-        setPopular(data.items);
+            const api = await fetch('https://www.googleapis.com/books/v1/volumes?q=quilting');
+            const data = await api.json();
+            localStorage.setItem("popular", JSON.stringify(data.items));
+            setPopular(data.items);
+            console.log(data);
+        }
+
+
     };
 
     return (
@@ -36,7 +45,7 @@ function Popular() {
                                 <Card>
                                     <p>{book.volumeInfo.title}</p>
                                     <img src={book.volumeInfo.imageLinks.smallThumbnail} alt={book.volumeInfo.title} />
-                                    < Gradient/>
+                                    < Gradient />
                                 </Card>
                             </SplideSlide>
                         );
@@ -53,20 +62,18 @@ function Popular() {
 const Wrapper = styled.div`margin: 4rem 0 rem;`;
 
 const Card = styled.div` 
-        min-height: 15rem;
+        min-height: 25rem;
         border-radius: 1rem;
         background: #f2bbe6;
-        padding: 1rem;
-        margin: 1rem;
         overflow: hidden;
         position: relative;
         img{
             border-radius:3rem;
             position: absolute;
             top: 40px;
-            left: 10px;
+            left: 0px;
             width: 100%;
-            height: 70%;
+            height: 100%;
             object-fit: contain;
         }
         p{
