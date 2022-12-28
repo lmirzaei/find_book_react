@@ -24,7 +24,7 @@ function Popular() {
                 <h3>Popular Books</h3>
 
                 <Splide options={{
-                    perPage : 5,
+                    perPage: 5,
                     arrows: false,
                     pagination: true,
                     drag: "free",
@@ -36,6 +36,7 @@ function Popular() {
                                 <Card>
                                     <p>{book.volumeInfo.title}</p>
                                     <img src={book.volumeInfo.imageLinks.smallThumbnail} alt={book.volumeInfo.title} />
+                                    < Gradient/>
                                 </Card>
                             </SplideSlide>
                         );
@@ -44,7 +45,7 @@ function Popular() {
                 </Splide>
 
             </Wrapper>
-            
+
         </div>
     )
 }
@@ -60,7 +61,7 @@ const Card = styled.div`
         overflow: hidden;
         position: relative;
         img{
-            border-radius:1rem;
+            border-radius:3rem;
             position: absolute;
             top: 40px;
             left: 10px;
@@ -86,5 +87,13 @@ const Card = styled.div`
             align-items: center;
         }
 `;
+
+const Gradient = styled.div`
+            z-index: 3;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
+            `;
 
 export default Popular
