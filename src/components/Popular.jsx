@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import styled from "styled-components";
 
 function Popular(){
 const [popular, setPopular] = useState([]);
@@ -27,4 +28,6 @@ const [popular, setPopular] = useState([]);
         </div>;
     
 }
+
+const Wrapper = styled.div`margin: 4rem 0 rem;`;
 export default Popular
