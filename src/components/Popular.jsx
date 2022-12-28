@@ -33,7 +33,7 @@ function Popular() {
                 <h3>Popular Books</h3>
 
                 <Splide options={{
-                    perPage: 5,
+                    perPage: 3,
                     arrows: false,
                     pagination: true,
                     drag: "free",
