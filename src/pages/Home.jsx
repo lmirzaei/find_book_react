@@ -6,7 +6,7 @@ import React from 'react'
 function Home() {
   return (
     <div>
-        <h1>This is the Home React Page</h1>
+        <h3>This is the Home of a React Page to display books from Google Books API</h3>
         <Popular />
         <Trending />
     </div>
