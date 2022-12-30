@@ -8,20 +8,20 @@ import React from 'react'
 function Category() {
     return (
         <List>
-            <div>
+            <NavLink>
                 <MdFavorite />
                 <h4>Favorite</h4>
-            </div>
+            </NavLink>
 
-            <div>
+            <NavLink>
                 <GiFlowerPot />
                 <h4>Flowers</h4>
-            </div>
+            </NavLink>
 
-            <div>
+            <NavLink>
                 <IoIosHome />
                 <h4>Home</h4>
-            </div>
+            </NavLink>
         </List>
     )
 }
