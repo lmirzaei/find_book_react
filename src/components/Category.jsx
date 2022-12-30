@@ -8,17 +8,17 @@ import React from 'react'
 function Category() {
     return (
         <List>
-            <NavLink>
+            <NavLink to={"/mylibrary/favorite"}>
                 <MdFavorite />
                 <h4>Favorite</h4>
             </NavLink>
 
-            <NavLink>
+            <NavLink to={"/mylibrary/flower"}>
                 <GiFlowerPot />
                 <h4>Flowers</h4>
             </NavLink>
 
-            <NavLink>
+            <NavLink to={"/"}>
                 <IoIosHome />
                 <h4>Home</h4>
             </NavLink>

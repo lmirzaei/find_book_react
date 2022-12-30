@@ -5,12 +5,10 @@ import MyLibrary from "./MyLibrary";
 
 function Pages() {
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/mylibrary" element={<MyLibrary />} />
-            </Routes>
-        </BrowserRouter>
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/mylibrary/:type" element={<MyLibrary />} />
+        </Routes>
     )
 }
 export default Pages;
