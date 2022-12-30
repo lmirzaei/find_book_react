@@ -30,7 +30,7 @@ function Trending() {
     return (
         <div>
             <Wrapper>
-                <h4>Trending Books</h4>
+                <h4>Trending Books for Today</h4>
 
                 <Splide options={{
                     perPage: 5,
