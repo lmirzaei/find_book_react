@@ -1,6 +1,6 @@
 import { GiFlowerPot } from 'react-icons/gi';
 import { IoIosHome } from 'react-icons/io';
-import { MdOutlineFavorite, MdCategory, MdFavorite } from 'react-icons/md';
+import { MdFavorite } from 'react-icons/md';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import React from 'react'
