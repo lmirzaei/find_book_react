@@ -1,13 +1,13 @@
 import { BrowserRouter } from 'react-router-dom';
 import Category from './components/Category';
-import Search from './components/Search';
+import SearchBar from './components/SearchBar';
 import Pages from './pages/Pages';
 
 function App() {
   return (
     <div className='App'>
       <BrowserRouter>
-        <Search />
+        <SearchBar />
         <Category />
         <Pages />
       </BrowserRouter>
