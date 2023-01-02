@@ -1,13 +1,15 @@
 import React from "react";
 import Home from "./Home";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import MyLibrary from "./MyLibrary";
+import Searched from "./Searched";
 
 function Pages() {
     return (
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/mylibrary/:type" element={<MyLibrary />} />
+            <Route path="/searched/:search" element={<Searched />} />
         </Routes>
     )
 }
