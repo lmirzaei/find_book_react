@@ -22,7 +22,7 @@ function MyLibrary() {
         <Grid>
             {mylibrary.map((book) => {
                 return (
-                    <Card>
+                    <Card key={book.id}>
                         <img src={book.volumeInfo.imageLinks.smallThumbnail} alt={book.volumeInfo.title} />
                         <h4>{book.volumeInfo.title}</h4>
                     </Card>

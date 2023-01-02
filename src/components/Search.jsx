@@ -4,8 +4,14 @@ import { FaSearch } from "react-icons/fa"
 
 function Search() {
     const [search_query, setInput] = useState("");
+
+    const submitHandler = (e) => {
+        console.log("Hi Leila");
+        console.log(e);
+        e.preventDefault();
+    }
     return (
-        <FormStyle>
+        <FormStyle onSubmit={submitHandler}>
             <div>
                 <FaSearch />
                 <input onChange={(e) => setInput(e.target.value)} type="text" value={search_query} />
