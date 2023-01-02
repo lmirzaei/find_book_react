@@ -7,7 +7,7 @@ function MyLibrary() {
     let params = useParams();
 
     const getMyLibrary = async (name) => {
-        const api = await fetch('https://www.googleapis.com/books/v1/volumes?q=${name}');
+        const api = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${name}`);
         const data = await api.json();
         setMyLibrary(data.items);
     };
@@ -19,7 +19,16 @@ function MyLibrary() {
     }, [params.type]);
 
     return (
-        <div>MyLibrary Test</div>
+        <Grid>
+            {mylibrary.map((book) => {
+                return (
+                    <Card>
+                        <img src={book.volumeInfo.imageLinks.smallThumbnail} alt={book.volumeInfo.title} />
+                        <h4>{book.volumeInfo.title}</h4>
+                    </Card>
+                );
+            })}
+        </Grid>
     )
 }
 
@@ -42,5 +51,7 @@ const Card = styled.div`
         padding:1rem;
     }
 `;
+
+
 
 export default MyLibrary
