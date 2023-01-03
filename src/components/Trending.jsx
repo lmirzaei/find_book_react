@@ -17,7 +17,7 @@ function Trending() {
         }
         else {
 
-            const api = await fetch('https://www.googleapis.com/books/v1/volumes?q=flowers');
+            const api = await fetch('https://www.googleapis.com/books/v1/volumes?q=Trending');
             const data = await api.json();
             localStorage.setItem("trending", JSON.stringify(data.items));
             setTrending(data.items);
