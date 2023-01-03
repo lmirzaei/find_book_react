@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
 function MyLibrary() {
@@ -15,7 +15,6 @@ function MyLibrary() {
     // use effect invokes the `getMyLibrary` function.
     useEffect(() => {
         getMyLibrary(params.type)
-        console.log(params.type);
     }, [params.type]);
 
     return (
@@ -23,8 +22,10 @@ function MyLibrary() {
             {mylibrary.map((book) => {
                 return (
                     <Card key={book.id}>
-                        <img src={book.volumeInfo.imageLinks.smallThumbnail} alt={book.volumeInfo.title} />
-                        <h4>{book.volumeInfo.title}</h4>
+                        <Link to={"/book/" + book.id}>
+                            <img src={book.volumeInfo.imageLinks.smallThumbnail} alt={book.volumeInfo.title} />
+                            <h4>{book.volumeInfo.title}</h4>
+                        </Link>
                     </Card>
                 );
             })}

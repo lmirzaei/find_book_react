@@ -22,7 +22,6 @@ function Searched() {
       {searchedBooks.map((book) => {
         return (
           <Card key={book.id}>
-            <h1>{book.id}</h1>
             <Link to={"/book/" + book.id}>
               <img src={book.volumeInfo.imageLinks.smallThumbnail} alt={book.volumeInfo.title} />
               <h4>{book.volumeInfo.title}</h4>
