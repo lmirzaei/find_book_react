@@ -7,7 +7,7 @@ function MyLibrary() {
     let params = useParams();
 
     const getMyLibrary = async (name) => {
-        const api = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${name}`);
+        const api = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${name}&printType=books`);
         const data = await api.json();
         setMyLibrary(data.items);
     };
