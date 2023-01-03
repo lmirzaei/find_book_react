@@ -3,13 +3,13 @@ import { useParams, Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 function Searched() {
-  const [searchedBooks, setSearchedBookks] = useState([]);
+  const [searchedBooks, setSearchedBooks] = useState([]);
   let params = useParams();
 
   const getSearched = async (name) => {
-    const api = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${name}&maxResults=20`);
+    const api = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${name}&maxResults=20&printType=books`);
     const data = await api.json();
-    setSearchedBookks(data.items);
+    setSearchedBooks(data.items);
   };
 
   // use effect invokes the `getSearched` function.
@@ -22,7 +22,8 @@ function Searched() {
       {searchedBooks.map((book) => {
         return (
           <Card key={book.id}>
-            <Link to={"/book/"+ book.volumeInfo.id}>
+            <h1>{book.id}</h1>
+            <Link to={"/book/" + book.id}>
               <img src={book.volumeInfo.imageLinks.smallThumbnail} alt={book.volumeInfo.title} />
               <h4>{book.volumeInfo.title}</h4>
             </Link>
@@ -51,6 +52,11 @@ const Card = styled.div`
         text-align: center;
         padding:1rem;
     }
+    h1{
+      text-align: center;
+      padding:1rem;
+      color: red;
+  }
 `;
 
 export default Searched
