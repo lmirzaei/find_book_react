@@ -16,8 +16,7 @@ function Popular() {
             setPopular(JSON.parse(check)); // Local storage saves data only in String format, not array or list format.
         }
         else {
-
-            const api = await fetch('https://www.googleapis.com/books/v1/volumes?q=quilting');
+            const api = await fetch('https://www.googleapis.com/books/v1/volumes?q=Microsoft&printType=books');
             const data = await api.json();
             localStorage.setItem("popular", JSON.stringify(data.items));
             setPopular(data.items);
