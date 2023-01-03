@@ -1,4 +1,5 @@
 import { GiFlowerPot } from 'react-icons/gi';
+import { FaCat } from 'react-icons/fa';
 import { IoIosHome } from 'react-icons/io';
 import { MdFavorite } from 'react-icons/md';
 import styled from 'styled-components';
@@ -16,6 +17,11 @@ function Category() {
             <SLink to={"/mylibrary/flower"}>
                 <GiFlowerPot />
                 <h4>Flowers</h4>
+            </SLink>
+
+            <SLink to={"/mylibrary/animal"}>
+                <FaCat />
+                <h4>Animals</h4>
             </SLink>
 
             <SLink to={"/"}>
